@@ -409,8 +409,9 @@ MonoBehaviour:
   xMax: 10
   height: 4
   flakesPerFrame: 10
-  snowflake: {fileID: 2797169259220382242, guid: 7c78a149d9834344b9d919f3206942e0,
+  snowflake: {fileID: 6219338960563295573, guid: a436b494dc4bee44cba61c666e6881d1,
     type: 3}
+  raindrop: {fileID: 711216712301762757, guid: fee82fdd4e69e2f4fb94ae045f81dbd4, type: 3}
   poolSize: 500
 --- !u!4 &1988864353
 Transform:

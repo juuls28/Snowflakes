@@ -13,18 +13,30 @@ public class GameControllerPool : MonoBehaviour
 
 
     public GameObject snowflake;
+    public GameObject raindrop;
     public int poolSize = 1000;
-    private List<GameObject> flakes;
+    private List<GameObject> fallingObjects;
 
     // Start is called before the first frame update
     void Start()
     {
-        flakes = new List<GameObject>();
+        fallingObjects = new List<GameObject>();
         for(int i = 0; i < poolSize; i++)
         {
-            GameObject obj = (GameObject)Instantiate(snowflake);
+            GameObject obj;
+
+            //Fill Pool half with snow and rain
+            if (i % 2 == 0)
+            {
+                obj = (GameObject)Instantiate(snowflake);
+            }
+            else
+            {
+                obj = (GameObject)Instantiate(raindrop);
+            }
+            
             obj.SetActive(false);
-            flakes.Add(obj);
+            fallingObjects.Add(obj);
         }
     }
 
@@ -42,12 +54,12 @@ public class GameControllerPool : MonoBehaviour
 
         System.Random r = new System.Random();
 
-        for (int i = 0; i < flakes.Count; i++)
+        for (int i = 0; i < fallingObjects.Count; i++)
         {
-            if (!flakes[i].activeInHierarchy)
+            if (!fallingObjects[i].activeInHierarchy)
             {
-                flakes[i].transform.position = new Vector3(xMin + (float)r.NextDouble() * (xMax - xMin), height, zMin + (float)r.NextDouble() * (zMax - zMin));
-                flakes[i].SetActive(true);
+                fallingObjects[i].transform.position = new Vector3(xMin + (float)r.NextDouble() * (xMax - xMin), height, zMin + (float)r.NextDouble() * (zMax - zMin));
+                fallingObjects[i].SetActive(true);
                 counter++;
                 if(counter == flakesPerFrame)
                 {
