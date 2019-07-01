@@ -127,11 +127,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1988864353}
     m_Modifications:
-    - target: {fileID: 4903068583485573311, guid: b828896fd97f0014aba037c445bc0986,
-        type: 3}
-      propertyPath: m_Name
-      value: Floor
-      objectReference: {fileID: 0}
     - target: {fileID: 4903068583485573308, guid: b828896fd97f0014aba037c445bc0986,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -186,6 +181,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4903068583485573311, guid: b828896fd97f0014aba037c445bc0986,
+        type: 3}
+      propertyPath: m_Name
+      value: Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 4903068583485573311, guid: b828896fd97f0014aba037c445bc0986,
+        type: 3}
+      propertyPath: m_TagString
+      value: floor
       objectReference: {fileID: 0}
     - target: {fileID: 4903068583211651091, guid: b828896fd97f0014aba037c445bc0986,
         type: 3}
@@ -384,6 +389,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1988864353}
   - component: {fileID: 1988864352}
+  - component: {fileID: 1988864354}
   m_Layer: 0
   m_Name: GameSceneController
   m_TagString: Untagged
@@ -398,7 +404,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1988864351}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6831c9e361136c14386a799f1a7952bf, type: 3}
   m_Name: 
@@ -412,7 +418,7 @@ MonoBehaviour:
   snowflake: {fileID: 6219338960563295573, guid: a436b494dc4bee44cba61c666e6881d1,
     type: 3}
   raindrop: {fileID: 711216712301762757, guid: fee82fdd4e69e2f4fb94ae045f81dbd4, type: 3}
-  poolSize: 500
+  poolSize: 5000
 --- !u!4 &1988864353
 Transform:
   m_ObjectHideFlags: 0
@@ -428,3 +434,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1988864354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988864351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1501ea9b189f2e843a3b54cfacb6f707, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zMin: -10
+  zMax: 10
+  xMin: -10
+  xMax: 10
+  height: 4
+  flakesPerFrame: 10
+  snowflake: {fileID: 6219338960563295573, guid: a436b494dc4bee44cba61c666e6881d1,
+    type: 3}
+  poolSize: 1000
+  pool: {fileID: 7948922348312247087, guid: 17c6f418209b9aa4387689f9952dd259, type: 3}
